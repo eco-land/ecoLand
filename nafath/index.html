@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="options-container">
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-md-6 mx-auto offset-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <!-- Sign-Up Form -->
+                  <h3 class="mb-4">Login</h3>
+                  <div class="form-group">
+                    <label for="SignUpUserName">User ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="SignUpUserName"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="SignUpPassword">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="SignUpPassword"
+                      required
+                    />
+                  </div>
+                  <button class="btn view-button" id="btn">Login</button>
+                  <button class="btn view-button" id="out">sign out</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><hr>
+      <div class="row">
+        <div class="col-md-6 mx-auto offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="options-container">
+                <div class="container mt-5">
+                  <form id="contactForm">
+                    <!--  Name -->
+                    <div class="form-group">
+                      <label for="start">starts</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="start"
+                        required
+                      />
+                    </div>
+                    <!--  tel -->
+                    <div class="form-group">
+                      <label for="end">ends</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="end"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="nA">national address</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nA"
+                        required
+                      />
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="km">km</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="km"
+                        required
+                      />
+                    </div>
+                    
+                    <button type="submit" class="btn">Add Contract</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    // ---------------- start user api fetch-------------------
+var userId;
+function getUserID(id, password) {
+  fetch("https://64d485a8b592423e4694350c.mockapi.io/api/v1/nafathUsers/")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data[id].id && data[id].password == password) {
+        console.log(data[id]);
+        userId = data[id].id;
+        console.log(userId);
+        getContracts(data[id].id);
+      } else {
+        console.log(`error entered data`);
+      }
+    });
+}
+function getContracts(id) {
+  fetch(
+    `https://64d485a8b592423e4694350c.mockapi.io/api/v1/nafathUsers/${id}/contracts`
+  )
+    .then((response) => response.json())
+
+    .then((data) => {
+      console.log(data[id]);
+    });
+}
+document.getElementById("btn").addEventListener("click", () => {
+  const id = document.getElementById("SignUpUserName").value;
+  const pas = document.getElementById("SignUpPassword").value;
+  getUserID(id, pas);
+});
+
+document.getElementById("out").addEventListener("click", () => {
+  userId = null;
+  console.log(userId);
+});
+// ---------------- end user api fetch-------------------
+
+// ---------------- start add contact----------------
+$("#contactForm").submit(function (e) {
+  e.preventDefault();
+})
+const kilometer=document.getElementById("km").value
+const newTask = {
+  kilometer:kilometer,
+};
+function addContract(id){
+fetch(`https://64d485a8b592423e4694350c.mockapi.io/api/v1/nafathUsers/${id}/contracts`, {
+  method: "POST",
+  headers: { "content-type": "application/json" },
+  // Send your data in the request body as JSON
+  body: JSON.stringify(newContract),
+})
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    // handle error
+  })
+  .then((task) => {
+    // do something with the new task
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
+
+// ---------------- end add contact----------------
+
+</script>  
+</body>
+</html>
