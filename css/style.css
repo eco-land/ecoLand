@@ -148,7 +148,7 @@
 }
 
 .ecoland {
-  margin-bottom: 21px;
+  margin-bottom: 52px;
   margin-left: 20px;
 }
 
@@ -176,6 +176,9 @@
     margin: auto;
     margin-left: 45px;
     margin-bottom: 15px;
+  }
+  .ecoland{
+    width: 400px;
   }
 }
 
