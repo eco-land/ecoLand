@@ -245,3 +245,43 @@
   new PureCounter();
 
 })()
+
+
+   // ---------------- start user api fetch-------------------
+   var userId;
+   function getUserID(id, password) {
+     fetch("https://64d485a8b592423e4694350c.mockapi.io/api/v1/nafathUsers/")
+       .then((response) => response.json())
+       .then((data) => {
+         if (data[id].id && data[id].password == password) {
+           console.log(data[id]);
+           userId = data[id].id;
+           console.log(userId);
+           getContracts(data[id].id);
+         } else {
+           console.log(`error entered data`);
+         }
+       });
+   }
+   function getContracts(id) {
+     fetch(
+       `https://64d485a8b592423e4694350c.mockapi.io/api/v1/nafathUsers/${id}/contracts`
+     )
+       .then((response) => response.json())
+   
+       .then((data) => {
+         console.log(data[id]);
+       });
+   }
+   document.getElementById("btn").addEventListener("click", () => {
+     const id = document.getElementById("SignUpUserName").value;
+     const pas = document.getElementById("SignUpPassword").value;
+     getUserID(id, pas);
+   });
+   
+   document.getElementById("out").addEventListener("click", () => {
+     userId = null;
+     console.log(userId);
+   });
+   // ---------------- end user api fetch-------------------
+   
