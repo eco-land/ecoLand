@@ -67,7 +67,8 @@
     display: block;
   }
 
-  .navbar ul {
+  .navbar ul,
+  .navbar-acc ul {
     display: none;
   }
 }
@@ -88,7 +89,7 @@
   left: -70px;
 }
 
-.dropdown-menu a{
+.dropdown-menu a {
   color: #102437;
 }
 
@@ -153,7 +154,7 @@
     margin-left: 45px;
     margin-bottom: 15px;
   }
-  .ecoland{
+  .ecoland {
     width: 390px;
   }
 }
@@ -202,7 +203,6 @@ div .value:hover {
   background-color: #2c3d4d;
 }
 
-
 .table-row {
   background-color: F0F0F0;
   margin-top: 2%;
@@ -212,13 +212,59 @@ div .value:hover {
 .sipchemimg {
   margin-top: -40px;
 }
-.footercolor{
-  background-color: #0F2132;
+.footercolor {
+  background-color: #0f2132;
   /* position: absolute;
   bottom: 0px; */
-
 }
-.imgstyle{
+.imgstyle {
   gap: 10px;
   padding: 10px;
+}
+
+/* user dashboard starts*/
+.user_menu {
+  background-color: #102437;
+  color: white;
+  margin: 0;
+  padding: 0;
+  border-radius: 4%;
+}
+.history {
+  background-color: #2c3d4d;
+}
+/* user dashboard ends */
+.contract-table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+.tbody {
+  background-color: #f9f9f9;
+}
+.contract-table-row {
+  border-style: none none !important;
+  border-radius: 100px !important;
+}
+
+.navbar-acc ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-acc a {
+  padding: 10px 15px;
+  color: #102437;
+  white-space: nowrap;
+  font-size: 12px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar-acc a:hover {
+  color: #e87001;
 }

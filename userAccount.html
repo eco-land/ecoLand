@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <style>
+      .modal-title {
+        font-size: 20px;
+        font-family: Tajawal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- test -->
+    <header class="fixed-top">
+      <nav
+        id="navbar"
+        class="navbar-acc d-flex align-items-center justify-content-between cn-stick-nav"
+      >
+        <img src="images/blueLogo.png" alt="logo" class="logo" width="100px" />
+        <ul class="navs">
+          <li><a class="nav-link scrollto" href="./index.html">Home</a></li>
+          <li><a class="nav-link" href="./index.html#value">Our Value</a></li>
+          <li>
+            <a class="nav-link scrollto" href="./index.html#calculator"
+              >Area Calculator</a
+            >
+          </li>
+          <li><a class="nav-link scrollto" href="./index.html#faq">FAQ</a></li>
+          <li>
+            <a class="nav-link scrollto" href="./index.html#contact"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+        <div class="dropdown mr-3">
+          <a href="#" data-bs-toggle="dropdown"
+            ><i
+              class="bi bi-person-circle profile"
+              style="font-size: 50px; color: #102437"
+            ></i
+          ></a>
+          <div class="dropdown-menu">
+            <div class="mobile d-md-none d-block">
+              <li>
+                <a class="dropdown-item" href="./index.html">Home</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="./index.html">Our Value</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#calculator">Area Calculator</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="">FAQ</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Contact Us</a>
+              </li>
+            </div>
+            <li>
+              <a href="nafath.html" class="dropdown-item">Dashboard</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item">Logout</a>
+            </li>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div style="margin-top: 190px; margin-bottom: 70px"></div>
+    <div class="container m-5">
+      <div class="row">
+        <!-- ---------------------------- start user menu ---------------------------->
+        <div class="col-lg-4 col-m-8 user_menu">
+          <!-- start user img -->
+          <div class="text-center">
+            <i class="bi bi-person-circle" style="font-size: 80px"></i>
+          </div>
+          <!-- end user img -->
+          <!-- start user info -->
+          <div class="p-3 mb-3">
+            <p class="h4">Mohammed Ahmed</p>
+            <p class="h4" id="userNationalId">National ID:</p>
+          </div>
+          <!-- end user info -->
+          <!-- start navigation -->
+          <div class="p-5 history">
+            <div class="row">
+              <i class="bi bi-list-ul"></i>
+
+              <!-- <p class="h5 ml-3 font-weight-bold">History</p> -->
+              <p class="h5 ml-3">History</p>
+            </div>
+          </div>
+          <div class="row p-5">
+            <i class="bi bi-box-arrow-right"></i>
+            <p class="h5 ml-3">Sign Out</p>
+          </div>
+          <!-- end navigation -->
+        </div>
+        <!-- ---------------------------- end user menu ---------------------------->
+
+        <!-- ---------------------------- start user history ---------------------------->
+        <div class="col-lg-8 col-m-8 p-3">
+          <div class="row d-grid gap-2 d-md-flex justify-content-md-end">
+            <button
+              type="button"
+              class="btn btn-info text-right"
+              data-toggle="modal"
+              data-target="#contactModal"
+            >
+              Add New Area
+            </button>
+          </div>
+          <table class="table table-hover m-4 contract-table">
+            <thead>
+              <tr>
+                <th scope="col">Reference No.</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Contract</th>
+              </tr>
+            </thead>
+            <tbody class="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center text-lg-start footercolor mt-4">
+      <!-- Copyright -->
+      <div class="text-center p-3 text-white">
+        © 2023 ECO LAND. All Rights Reserved.
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Modal -->
+
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">
+                Leave your contract
+                <div
+                  style="
+                    color: black;
+                    font-size: 15px;
+                    font-family: Tajawal;
+                    font-weight: 400;
+                    line-height: 25.6px;
+                    word-wrap: break-word;
+                  "
+                >
+                  We want to know all about you
+                </div>
+              </h3>
+
+              <button
+                type="button"
+                class="btn btn-primary rounded-circle"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <h3 style="font-size: 15px">For Contact:</h3>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Phone"
+                />
+              </div>
+              <hr />
+
+              <h3 style="font-size: 15px">Area Info:</h3>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control custom-input"
+                  id="address"
+                  placeholder="National Id"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="distance"
+                  placeholder="KM"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="years"
+                  placeholder="Year"
+                />
+              </div>
+
+              <button type="button" class="btn btn-info btn-block">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+    <script>
+      // Retrieve the stored data from the localStorage
+      const storedData = localStorage.getItem("contractsData");
+      const table = document.querySelector("tbody");
+      if (storedData) {
+        const retrievedData = JSON.parse(storedData);
+        console.log(retrievedData); // Verify the retrieved data.
+        retrievedData.forEach((element) => {
+          let ConsultationHTML = document.createElement("tr");
+          ConsultationHTML.classList.add("contract-table-row");
+          ConsultationHTML.innerHTML = `  
+            <td class="p-4 ">${element.nationalAddress}</td>
+            <td class="p-4">${element.contractStrat}</td>
+            <td class="p-4">${element.status}</td>
+            <td class="btn btn-primary m-3">.pdf</td>
+            `;
+          table.appendChild(ConsultationHTML);
+          document.getElementById("userNationalId").innerHTML +=
+            element.nafathUserId;
+        });
+      } else {
+        console.log("No stored data found!");
+      }
+    </script>
+  </body>
+</html>
