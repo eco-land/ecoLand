@@ -208,3 +208,17 @@ div .value:hover {
   margin-top: 2%;
 }
 /* user dashboard ends */
+
+.sipchemimg {
+  margin-top: -40px;
+}
+.footercolor{
+  background-color: #0F2132;
+  /* position: absolute;
+  bottom: 0px; */
+
+}
+.imgstyle{
+  gap: 10px;
+  padding: 10px;
+}
