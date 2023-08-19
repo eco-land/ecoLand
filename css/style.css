@@ -222,49 +222,4 @@ div .value:hover {
   padding: 10px;
 }
 
-/* user dashboard starts*/
-.user_menu {
-  background-color: #102437;
-  color: white;
-  margin: 0;
-  padding: 0;
-  border-radius: 4%;
-}
-.history {
-  background-color: #2c3d4d;
-}
-/* user dashboard ends */
-.contract-table {
-  border-collapse: separate;
-  border-spacing: 0 20px;
-}
-.tbody {
-  background-color: #f9f9f9;
-}
-.contract-table-row {
-  border-style: none none !important;
-  border-radius: 100px !important;
-}
 
-.navbar-acc ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-
-.navbar-acc a {
-  padding: 10px 15px;
-  color: #102437;
-  white-space: nowrap;
-  font-size: 12px;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-.navbar-acc a:hover {
-  color: #e87001;
-}

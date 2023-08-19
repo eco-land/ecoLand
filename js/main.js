@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnSignOut").addEventListener("click", () => {
     userId = null;
     arr = [];
+    localStorage.clear()
+    location.href = "./index.html";
     console.log(userId);
   });
 });
