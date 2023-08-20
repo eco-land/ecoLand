@@ -222,4 +222,60 @@ div .value:hover {
   padding: 10px;
 }
 
+/* ___________________________________________________Profit Calculator___________________________________________________*/
+
+.box{
+
+  background-color: #102437;
+  border-radius: 11px;
+}
+
+.heading, h3{
+  color: aliceblue;
+}
+
+.feild{
+  background-color:F0F0F0;
+  opacity: 40%;
+  border-radius: 6px;
+  width: 510px;
+  height: 69.02px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+
+
+
+/* ___________________________________________________FAQ ___________________________________________________*/
+
+.FAQ-box{
+  padding: 3%;
+  margin: auto;
+  background-color:#FFFFFF;
+  border-radius: 11px;
+
+}
+
+.mini-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.mini-box, h3{
+  color: black;
+}
+
+.card-header{
+  padding: 2%;
+}
+
+.card{
+  margin-bottom: 2%;
+  
+}
+
 
