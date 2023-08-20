@@ -48,10 +48,9 @@ function getContracts(id) {
         console.log(arr);
         localStorage.setItem("contractsData", JSON.stringify(arr));
         location.href = "./userAccount.html";
-      }else{
+      } else {
         localStorage.setItem("contractsData", JSON.stringify(arr));
         location.href = "./userAccount.html";
-
       }
     });
 }
@@ -66,3 +65,6 @@ document.getElementById("userData").addEventListener("click", () => {
     console.log("No stored data found!");
   }
 });
+
+
+
