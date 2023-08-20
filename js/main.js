@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnSignOut").addEventListener("click", () => {
     userId = null;
     arr = [];
-    localStorage.clear()
-    location.href = "./index.html";
+    localStorage.clear();
+    // location.href = "./index.html";
     console.log(userId);
   });
 });
@@ -30,7 +30,6 @@ function getUserID(id, password) {
         // Store the fetched data in the localStorage
 
         // Redirect after the fetch completes & our data is stored
-        location.href = "./userAccount.html";
       } else {
         console.log(`Error in Passing the data`);
       }
@@ -44,8 +43,16 @@ function getContracts(id) {
     .then((response) => response.json())
     .then((data) => {
       arr = data; // Replace existing array with fetched data
-      localStorage.setItem("contractsData", JSON.stringify(arr));
-      console.log(arr);
+      if (!localStorage) {
+        localStorage.clear();
+        console.log(arr);
+        localStorage.setItem("contractsData", JSON.stringify(arr));
+        location.href = "./userAccount.html";
+      }else{
+        localStorage.setItem("contractsData", JSON.stringify(arr));
+        location.href = "./userAccount.html";
+
+      }
     });
 }
 //   ---------------- end user api fetch-------------------
