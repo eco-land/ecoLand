@@ -20,7 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
-    <link rel="icon" type="image/x-icon" href="/images/blueLogo.png">
+    <link rel="icon" type="image/x-icon" href="/images/blueLogo.png" />
 
     <style>
       * {
@@ -391,7 +391,11 @@
       }
       document.getElementById("generatePdf").addEventListener("click", () => {
         let doc = new jsPDF();
-        doc.text("contract", 15, 15);
+        doc.text(
+          "BETWEEN: ECO LAND \n\n\nMr./Mrs. ________________________ \n\nPARTIES:\nlAND Owner Name: __________________________________\nSite Address: __________________________________\nPhone Number: __________________________________\nEmail __________________________________\n\n\n\nRECITALS:\nThe Contractor is engaged in an independent business, is licensed \nand qualified to do business in Saudi Arabia and will comply \nwith all local Province, and lows.\n\n\nAGREEMENT:\nThe parties to this Contract agree as follows:\n1. Scope of Work.\nThe project scope includes the installation of a ____kW-DC \nrated __________-mounted solar\nphotovoltaic system at the property located at address listed above.\nPhotovoltaic system shall consist of:\n(_____) ________________________________ Solar Panels\n(_____) ________________________________ Inverters\nSystem shall be supported by Premium Grade aluminum mounting system,\n and other balance of system(BOS) components, including but not limited to \nSolar Performance Meter Box (if required), AC disconnect,\nand electrical hardware (circuit breakers, wire, conduit, junction boxes, etc.).\nAll equipment will be installed as required by applicable codes, the local utility\n company, and\nLandowner’s Association guidelines (if applicable).\nDuring daylight hours this photovoltaic system (solar electric) will provide\nelectricity in parallel with the\nlocal utility service provider.",
+          15,
+          15
+        );
         doc.save("contract.pdf");
       });
     </script>
